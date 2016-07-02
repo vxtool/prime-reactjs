@@ -13,7 +13,7 @@
 
 ## Log
 
-Check [Releases](https://github.com/prime-solutions/prime-prime-reactjs/releases) for detailed changelog.
+Check [Releases](https://github.com/prime-solutions/prime-reactjs/releases) for detailed changelog.
 
 ## License
 
