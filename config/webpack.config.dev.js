@@ -51,7 +51,7 @@ module.exports = {
   plugins: plugins,
   devServer: {
     contentBase: path.resolve(__dirname, PATHS.build),
-    port: 8000,
+    port: 8100,
     historyApiFallback: true
   },
   devtool: 'eval'
