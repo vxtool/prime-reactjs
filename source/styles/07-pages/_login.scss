@@ -1,0 +1,42 @@
+$page-background: #1ab394;
+$box-background: #fff;
+$shadow-color: rgba(0, 0, 0, 0.4);
+
+.container {
+  background: $page-background;
+  height: 100%;
+  position: absolute;
+  width: 100%;
+}
+
+.box {
+  background: $box-background;
+  border-radius: 4px;
+  box-shadow: 0 1px 4px $shadow-color;
+  left: 50%;
+  margin-left: -150px;
+  margin-top: -225px;
+  max-width: 300px;
+  padding: 20px;
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  z-index: 1;
+}
+
+.figure {
+  background: $page-background;
+  border-radius: 4px 4px 0 0;
+  display: block;
+  margin: -20px -20px 0;
+  margin-bottom: 15px;
+  padding: 10px;
+  text-align: center;
+}
+
+.rocket {
+  bottom: 0;
+  position: absolute;
+  right: 0;
+  z-index: 0;
+}

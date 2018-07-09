@@ -34,7 +34,7 @@ const config = {
     publicPath: '/',
   },
   resolve: {
-    extensions: ['.js', '.jsx', '.styl', '.css'],
+    extensions: ['.js', '.jsx', '.scss', '.css'],
   },
   module: {
     rules: [
@@ -46,43 +46,38 @@ const config = {
       { test: require.resolve('react'), use: ['expose-loader?React'] },
       { test: require.resolve('react-dom'), use: ['expose-loader?ReactDOM'] },
       {
-        test: /\.styl$/,
+        test: /\.scss$/,
         loader: ExtractTextPlugin.extract({
           fallback: 'style-loader',
           use: [
             {
               loader: 'css-loader',
+              options: {
+                modules: true,
+                importLoaders: true,
+                localIdentName: '[name]_[local]_[hash:base64:5]'
+              }
             },
             {
               loader: 'postcss-loader',
               options: {
                 plugins: () => [
-                  require('autoprefixer'),
-                  require('postcss-discard-duplicates'),
-                  require('postcss-discard-unused')(),
+                  require('autoprefixer')
                 ],
               },
             },
             {
-              loader: 'stylus-loader',
+              loader: 'sass-loader',
             },
           ],
         }),
       },
       {
-        test: /\.css/,
-        include: path.resolve(__dirname, '../../node_modules/b2wadvertising-theme/dist/'),
-        loader: ExtractTextPlugin.extract({
-          fallback: 'style-loader',
-          use: [
-            {
-              loader: 'css-loader',
-            },
-          ],
-        }),
+        test: /\.svg$/,
+        loader: 'svg-inline'
       },
       {
-        test: /\.(jpg|png|eot|woff|ttf|svg)$/,
+        test: /\.(jpe?g|jpg|gif|ico|png|woff|woff2|eot|ttf|svg)$/,
         loader: 'file-loader',
         exclude: [/node_modules/],
       },

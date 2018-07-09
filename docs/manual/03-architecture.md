@@ -28,7 +28,7 @@
     │   └──
     ├── config
     ├── helpers
-    |   ├── auth
+    │   ├── auth
     │   └── local-storage
     ├── layouts
     ├── pages

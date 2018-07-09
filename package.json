@@ -14,6 +14,11 @@
     "lint": "./node_modules/.bin/eslint source",
     "lint:fix": "npm run lint -- --fix",
     "release": "./node_modules/.bin/release-it",
+    "e2e-setup": "selenium-standalone install",
+    "test": "cross-env NODE_ENV=development jest --silent --coverage",
+    "test:dev": "cross-env NODE_ENV=development jest --coverage",
+    "test:e2e": "nightwatch",
+    "test:watch": "cross-env NODE_ENV=development jest --watch"
   },
   "repository": {
     "type": "git"
@@ -62,6 +67,8 @@
     "babel-loader": "8.0.0-beta.2",
     "babel-plugin-module-resolver": "2.7.1",
     "babel-plugin-webpack-alias": "2.1.2",
+    "chai": "4.0.2",
+    "chai-enzyme": "0.6.1",
     "classnames": "2.2.5",
     "css-loader": "0.28.1",
     "enzyme": "2.9.1",
@@ -76,8 +83,13 @@
     "file-loader": "1.1.11",
     "html-webpack-plugin": "2.30.1",
     "husky": "0.13.4",
+    "identity-obj-proxy": "3.0.0",
     "jsdom": "9.12.0",
+    "moxios": "0.3.0",
+    "nightwatch": "0.9.15",
+    "nock": "9.0.2",
     "nodemon": "1.17.2",
+    "node-sass": "4.0.0",
     "postcss-discard-duplicates": "2.1.0",
     "postcss-discard-unused": "2.2.3",
     "postcss-loader": "0.9.1",
@@ -88,6 +100,9 @@
     "release-it": "7.2.1",
     "rimraf": "2.6.2",
     "s3-upload": "0.1.0",
+    "sass-lint": "1.10.2",
+    "sass-loader": "6.0.6",
+    "selenium-standalone": "6.4.1",
     "style-loader": "0.17.0",
     "svg-react-loader": "0.4.5",
     "uglifyjs-webpack-plugin": "1.2.5",
@@ -95,6 +110,28 @@
     "webpack-dev-middleware": "1.12.2",
     "webpack-dev-server": "2.11.1",
     "webpack-hot-middleware": "2.21.0"
+  },
+  "jest": {
+    "verbose": false,
+    "testRegex": "(/source/.*.(test|spec)).(js|jsx)$",
+    "setupTestFrameworkScriptFile": "./internals/test/setup.js",
+    "moduleFileExtensions": [
+      "js",
+      "json",
+      "jsx"
+    ],
+    "transform": {
+      "^.+\\.js?$": "babel-jest"
+    },
+    "moduleNameMapper": {
+      "\\.(s?css)$": "identity-obj-proxy",
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "./internals/file-transformer.js"
+    },
+    "moduleDirectories": [
+      "node_modules",
+      "source"
+    ],
+    "cacheDirectory": "./tmp/"
   },
   "license": "MIT"
 }

@@ -1,0 +1,119 @@
+// Esconder texto
+///
+@mixin x-text-hide() {
+  background-color: transparent;
+  border: 0;
+  color: transparent;
+  font-size: 0;
+  text-shadow: none;
+}
+
+// Clearfix
+///
+@mixin x-clearfix() {
+  &:before,
+  &:after {
+    content: " ";
+    display: table;
+  }
+  &:after { clear: both; }
+}
+
+// Opacity
+///
+@mixin x-opacity($opacity) {
+  // IE8 filter
+  $opacity-ie: ($opacity * 100);
+  filter: alpha(opacity=$opacity-ie);
+  opacity: $opacity;
+}
+
+// REM Fallback
+///
+@mixin x-rem-fallback($property, $values...) {
+  // html {font-size: 62.5%;}
+  $max: length($values);
+  $px-values: "";
+  $rem-values: "";
+  $repeatProperty: $property;
+
+  @for $i from 1 through $max {
+    $value: x-strip-unit(nth($values, $i));
+    $px-values: #{$px-values + $value*10}px;
+
+    @if $i < $max {
+      $px-values: #{$px-values + " "};
+    }
+  }
+
+  @for $i from 1 through $max {
+    $value: x-strip-unit(nth($values, $i));
+    $rem-values: #{$rem-values + $value}rem;
+
+    @if $i < $max {
+      $rem-values: #{$rem-values + " "};
+    }
+  }
+
+  #{$property}: $px-values;
+  #{$repeatProperty}: $rem-values;
+}
+
+// Keyframes
+///
+@mixin x-keyframes($animation-name) {
+  @-webkit-keyframes #{$animation-name} {
+    $browser: "-webkit-" !global;
+    @content;
+  }
+  @-moz-keyframes #{$animation-name} {
+    $browser: "-moz-" !global;
+    @content;
+  }
+  @-o-keyframes #{$animation-name} {
+    $browser: "-o-" !global;
+    @content;
+  }
+  @-ms-keyframes #{$animation-name} {
+    $browser: "-ms-" !global;
+    @content;
+  }
+  @keyframes #{$animation-name} {
+    $browser: "" !global;
+    @content;
+  }
+} $browser: null;
+
+/// Mixin to prefix a property
+///
+/// @param {String} $property - Property name
+/// @param {*} $value - Property value
+/// @param {List} $prefixes (()) - List of prefixes to print
+///
+@mixin x-prefix($property, $value, $prefixes: (webkit moz o ms)) {
+  @each $prefix in $prefixes {
+    #{"-" + $prefix + "-" + $property}: $value;
+  }
+  #{$property}: $value;
+}
+
+// Transition
+///
+@mixin x-transition($values...) {
+  $transitions: ();
+  @each $declaration in $values {
+    $prop: nth($declaration, 1);
+    $prop-opts: ();
+    $length: length($declaration);
+    @for $i from 2 through $length {
+      $prop-opts: append($prop-opts, nth($declaration, $i));
+    }
+    $trans: ($prop, $prop-opts);
+    $transitions: append($transitions, $trans, comma);
+  }
+
+  -moz-transition: x-trans-prefix($transitions, moz);
+  -ms-transition: x-trans-prefix($transitions, ms);
+  -o-transition: x-trans-prefix($transitions, o);
+  transition: $values;
+}
