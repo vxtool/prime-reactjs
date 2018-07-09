@@ -12,41 +12,28 @@
 ## Pastas
 
 ```sh
-├── build-scripts
-│   └── api
 ├── dist
 ├── docs
 │   └── manual
 ├── helpers
 │   └── component
-├── images
+├── internals
+│   ├── tests
+│   └── webpack
 ├── server
-├── source
-│   ├── components
-│   │   ├── form
-│   │   ├── header
-│   │   ├── loading
-│   │   └── menu
-│   ├── config
-│   ├── helpers
-│   |   ├── auth
-│   │   └── url
-│   ├── json
-│   ├── middlewares
-│   ├── reducers
-│   ├── styles
-│   │   ├── base
-│   │   ├── components
-│   │   └── partials
-│   └── views
-│       ├── actions
-│       ├── advertising
-│       ├── create-action
-│       └── create-advertising
-├── tests
-│   ├── specs
-│   └── utils
-└── webpack
+└── source
+    ├── api
+    ├── components
+    │   ├──
+    │   └──
+    ├── config
+    ├── helpers
+    |   ├── auth
+    │   └── local-storage
+    ├── layouts
+    ├── pages
+    ├── reducers
+    └── styles
 ```
 
 ## Componentes

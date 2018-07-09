@@ -41,13 +41,10 @@ yarn
 ## Comandos
 
 - **yarn start**: levanta um servidor de desenvolvimento em [http://localhost:8000](http://localhost:8000)
-- **yarn test**: roda os testes
-- **yarn test:tdd**: roda os testes e fica escutando por alteraçõe
 - **yarn lint**: verifica o code style e patterns de react e es6.
 - **yarn lint:fix**: verifica o code style e patterns de react e es6 e corrige coisas simples.
 - **yarn ci**: roda os tests e o lint
 - **yarn build**: gera a pasta `dist`, que vai para produção
-- **yarn start-mockapi**: roda o servidor para o mock da API
 
 ## Criar Tag
 
