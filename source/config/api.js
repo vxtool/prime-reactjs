@@ -2,8 +2,8 @@ import axios from 'axios';
 import { getToken } from '../helpers';
 
 const hosts = {
-  'app.b2wadvertising.com': 'http://api.b2wadvertising.com',
-  'app-staging.b2wadvertising.com': 'http://api-staging.b2wadvertising.com',
+  'app.prime.com': 'http://api.prime.com',
+  'app-staging.prime.com': 'http://api-staging.prime.com',
   localhost: 'http://localhost:3000',
 };
 const host = window.location.hostname;

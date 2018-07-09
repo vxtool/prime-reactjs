@@ -7,9 +7,6 @@ import configureStore from './store';
 import routes from './routes';
 import history from './history';
 
-import '../node_modules/b2wadvertising-theme/dist/b2wadvertising-theme.min.css';
-import './styles/style.styl';
-
 const store = configureStore({});
 
 if (module.hot) {

@@ -8,7 +8,7 @@ const isProd = () => NODE_ENV === 'production';
 
 const config = {
   credentials: rootPath,
-  bucketName: isProd() ? 'app.b2wadvertising.com' : 'app-staging.b2wadvertising.com',
+  bucketName: isProd() ? 'app.prime.com' : 'app-staging.prime.com',
   patterns: ['*.js', '*.css', '*.html'],
 };
 

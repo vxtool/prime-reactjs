@@ -1,17 +1,3 @@
 {
-  "name": "Nome",
-  "objective": "Objetivo",
-  "clicks": "Cliques",
-  "impressions": "Impressões",
-  "views": "Views",
-  "startDate": "Início",
-  "endDate": "Fim",
-  "cpc": "CPC",
-  "ctr": "CTR",
-  "cost": "Custo",
-  "conversion" : "CONV.",
-  "draft": "Rascunho",
-  "running": "Ativo",
-  "paused": "Pausado",
-  "closed": "Ecerrado"
+  "name": "Nome"
 }

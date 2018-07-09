@@ -2,23 +2,14 @@ import React from 'react';
 import { Route, Switch, Redirect } from 'react-router';
 import Translate from 'i18n-react';
 
-import { requireAuth } from './helpers';
+// import { requireAuth } from './helpers';
 
 import PtBr from './config/translate/pt-br.json';
 
-import Layout from './views/layout';
-import Blank from './views/blank';
+import Layout from './layouts/default';
+import Blank from './layouts/blank';
 
-import ActionsList from './views/actions';
-import Action from './views/action';
-
-import AdvertisingList from './views/advertisings';
-import Advertising from './views/advertising';
-
-import UsersList from './views/users';
-import User from './views/user';
-
-import Login from './views/login';
+// import Login from './pages/login';
 
 import history from './history';
 
@@ -62,23 +53,12 @@ export default () => {
   return (
     <Switch>
       <Route exact path="/">
-        <Redirect to="/actions" />
+        <Redirect to="/login" />
       </Route>
-      <BlankLayoutRoute exact path="/login" component={Login} />
-      <DashboardRoute exact path="/actions" component={requireAuth(ActionsList)} />
-      <DashboardRoute exact path="/actions/create" component={requireAuth(Action)} />
-      <DashboardRoute exact path="/actions/:actionId" component={requireAuth(Action)} />
-      <DashboardRoute exact path="/actions/:actionId/advertisings" component={requireAuth(AdvertisingList)} />
-      <DashboardRoute exact path="/actions/:actionId/advertisings/create" component={requireAuth(Advertising)} />
-      <DashboardRoute
-        exact
-        path="/actions/:actionId/advertisings/:advertisingId"
-        component={requireAuth(Advertising)}
-      />
-      <DashboardRoute exact path="/users" component={requireAuth(UsersList)} />
+      {/* <BlankLayoutRoute exact path="/login" component={Login} /> */}
+      {/* <DashboardRoute exact path="/users" component={requireAuth(UsersList)} />
       <DashboardRoute exact path="/users/create" component={requireAuth(User)} />
-      <DashboardRoute exact path="/users/:id" component={requireAuth(User)} />
-      <DashboardRoute exact path="/configs" component={requireAuth(ActionsList)} />
+      <DashboardRoute exact path="/users/:id" component={requireAuth(User)} /> */}
       <Redirect from="*" to="/" />
     </Switch>
   );

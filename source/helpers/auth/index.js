@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import history from '../../history';
 
 import { getToken, removeUserData } from '../local-storage';
-import authentication from '../../middlewares/authentication';
+import authentication from '../../api/authentication';
 
 export const requireAuth = ComposedComponent => {
   class Authentication extends Component {
