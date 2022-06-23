@@ -84,7 +84,7 @@
     "html-webpack-plugin": "2.30.1",
     "husky": "0.13.4",
     "identity-obj-proxy": "3.0.0",
-    "jsdom": "9.12.0",
+    "jsdom": "16.5.0",
     "moxios": "0.3.0",
     "nightwatch": "0.9.15",
     "nock": "9.0.2",
