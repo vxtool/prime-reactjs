@@ -33,7 +33,7 @@
     "dnscache": "1.0.1",
     "ejs": "2.5.8",
     "es6-promise": "4.2.4",
-    "express": "4.16.3",
+    "express": "4.17.3",
     "history": "4.7.2",
     "i18n-react": "0.6.3",
     "immutable": "3.8.2",
